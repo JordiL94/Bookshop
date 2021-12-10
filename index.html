@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Book Shop</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this project -->
+    <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body onload="onPageLoad()">
+
+    <div class="container">
+        <button type="button" class="createBookBtn btn btn-primary" data-toggle="modal" href="#newBookModal">Create new book</button>
+        <table class="table table-striped thead-inverse">
+            <thead>
+                <th class="idHead" onclick="onSort('id')">ID</th>
+                <th class="titleHead" onclick="onSort('title')">Title</th>
+                <th class="priceHead" onclick="onSort('price')">Price</th>
+                <th class="actionsHead">Actions</th>
+            </thead>
+            <tbody class="book-list">
+            </tbody>
+        </table>
+        <div class="pagination"></div>
+        <div class="change-lang">
+            <select class="form-select" aria-label="Default select example" onchange="onChangeLang(this.value)">
+                <option value="en">English</option>
+                <option value="he">עברית</option>
+            </select>
+        </div>
+    </div>
+    
+    <!-- Read modal -->
+    <div class="book-modal modal fade" id="bookModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                    <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                    <div class="modal-body">
+                        <h2>Book Title</h2>
+                        <p class="author">Author name</p>
+                        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ea
+                            officia, architecto ab doloribus, inventore consequuntur provident soluta, est ipsum
+                            nemo laudantium. Nemo ratione numquam corporis aspernatur vel fuga impedit tempora
+                            laudantium voluptas velit! Repudiandae quasi doloremque alias. Ad nesciunt architecto
+                            rem aliquid, eum quis rerum eveniet aperiam hic itaque sit? Alias, illum dolor esse
+                            maiores deleniti fugit impedit suscipit vel explicabo ad minima quas reiciendis
+                            molestias ab laboriosam neque delectus qui incidunt ipsam minus ut maxime rem. Eveniet
+                            nobis libero ducimus, sapiente atque deserunt qui sequi consequuntur quos dolor hic quia
+                            voluptatum consequatur commodi accusantium eaque nihil officia dicta itaque labore
+                            distinctio odit esse illum doloremque? Nihil molestias culpa assumenda quaerat quidem,
+                            nam hic at accusamus ipsa sit molestiae doloremque dignissimos possimus atque ratione
+                            facere. Ad vitae sequi tenetur corrupti, distinctio reprehenderit aperiam optio
+                            accusantium quam pariatur officiis asperiores quidem delectus consequatur veniam culpa
+                            libero dicta obcaecati fugiat iste.</p>
+                        <form>
+                            Rating: &#160;
+                            <div class="value-button" id="decrease" onclick="onDecreaseValue()" value="Decrease Value">-</div>
+                            <input type="number" id="number" value="0" />
+                            <div class="value-button" id="increase" onclick="onIncreaseValue()" value="Increase Value">+</div>
+                        </form>
+                        <p class="price">Price: </p>
+                        <button class="btn btn-primary" data-dismiss="modal" type="button">
+                            <i class="fa fa-times"></i>
+                            Hide details
+                        </button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New book modal -->
+    <div class="new-book-modal modal fade" id="newBookModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                    <div class="rl"></div>
+                    </div>
+                </div>
+                <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                    <div class="modal-body">
+                        <form>
+                            <p>Title:</p>
+                            <input type="text" class="book-title" placeholder="Name of the title"/>
+                            <p>Price:</p>
+                            <input type="text" class="book-price" placeholder="Price"/>
+                        </form>
+                        <h4 class="no-value"></h4>
+                        <button class="btn btn-primary" type="button" onclick="onAddBook()">submit</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/popper/popper.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this project -->
+    <script src="js/bookshop.service.js"></script>
+    <script src="js/bookshop.controller.js"></script>
+
+</body>
+
+</html>
