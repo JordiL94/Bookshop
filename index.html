@@ -21,7 +21,7 @@
 <body onload="onPageLoad()">
 
     <div class="container">
-        <button type="button" class="createBookBtn btn btn-primary" data-toggle="modal" href="#newBookModal">Create new book</button>
+        <button type="button" class="createBookBtn btn btn-primary" data-toggle="modal" href="#newBookModal" onclick="onCreateBut()">Create new book</button>
         <table class="table table-striped thead-inverse">
             <thead>
                 <th class="idHead" onclick="onSort('id')">ID</th>
@@ -103,13 +103,13 @@
                     <div class="col-lg-8 mx-auto">
                     <div class="modal-body">
                         <form>
-                            <p>Title:</p>
+                            <p class="book-title-exp">Title:</p>
                             <input type="text" class="book-title" placeholder="Name of the title"/>
-                            <p>Price:</p>
+                            <p class="book-price-exp">Price:</p>
                             <input type="text" class="book-price" placeholder="Price"/>
                         </form>
                         <h4 class="no-value"></h4>
-                        <button class="btn btn-primary" type="button" onclick="onAddBook()">submit</button>
+                        <button class="submit-button btn btn-primary" type="button" onclick="onAddBook()">submit</button>
                     </div>
                     </div>
                 </div>

@@ -69,6 +69,30 @@ var gTrans = {
     deleteButton: {
         en: 'Delete',
         he: 'מחיקה'
+    },
+    noValue: {
+        en: 'Title or price not specified',
+        he: 'לא צויין שם ספר או מחיר'
+    },
+    newTitleExp: {
+        en: 'Title:',
+        he: 'שם הספר:'
+    },
+    newTitleVal: {
+        en: 'Name of the title',
+        he: 'שם הספר'
+    },
+    newPriceExp: {
+        en: 'Price:',
+        he: 'מחיר:'
+    },
+    newPriceVal: {
+        en: 'Price',
+        he: 'מחיר'
+    },
+    submitButton: {
+        en: 'submit',
+        he: 'שלח'
     }
 };
 
